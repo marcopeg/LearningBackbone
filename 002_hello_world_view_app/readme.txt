@@ -1,5 +1,5 @@
 ---------------------------------------
-   Learning Backbon - 001 - HelloApp
+   Learning Backbon - 002 - HelloApp - View
 ---------------------------------------
 
-In this simple example I set up a page to load some javascript logic who depends on jQuery.
+In this example I use a Backbone's View to render the HelloWorld message.

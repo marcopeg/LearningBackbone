@@ -48,7 +48,7 @@ require.config({
 
 /**
  * This is the main module of our app.
- * It depends boot on libraries (jquery) and app's related sub-modules (view and template)
+ * It depends on app's related sub-modules (view and template)
  *
  * "view/hello_world"
  * this dependecy is solved usind the config::paths "view" key to load "js/views/hello_world.js" file
@@ -63,8 +63,8 @@ require.config({
  * NOTE: "templates/hello_worls.html" path refers to the config::baseUrl.
  *
  */
-define(['jquery','view/hello_world','text!templates/hello_world.html'],function($,View,Template){
+define(['view/hello_world_view','text!templates/hello_world.html'],function(HelloWorldView,Template){
 	
-	View.render( Template );
+	HelloWorldView.render( Template );
 	
 });
