@@ -1,0 +1,31 @@
+/**
+ * Learning Backbone
+ * -> Hello World View
+ *
+ * @author: MPeg [marco(dot)pegoraro(at)gmail(dot)com]
+ */
+
+
+html, body {
+	
+	background:		#eee;
+	font-family:	monospace;
+	text-shadow:	0 1px 0 #fff;
+	text-align:		center;
+	
+}
+
+#log {
+	
+	line-height: 2em;
+	min-height: 2em;
+	background: #ddd;
+	width: 70%;
+	text-align: center;
+	margin:auto;
+	border:1px dashed #aaa;
+	border-radius:3px;
+	box-shadow: 2px 2px 2px #999;
+}
+
+input { text-align:center }
