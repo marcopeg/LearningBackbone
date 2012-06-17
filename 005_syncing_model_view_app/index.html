@@ -1,0 +1,74 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Backbone / Syncing Models and Views</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="Peg Test App">
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="../_libs/bootstrap/css/bootstrap.min.css">
+	
+	<!-- RequireJS -->
+	<script data-main="js/bootstrap" src="../_libs/require.js"></script>
+	
+</head>
+<body>
+
+	<div id="app" class="container">
+		
+		<div class="page-header row">
+			<div class="span12">
+				<h2>LearningBackbone - Syncing Models with Views</h2>
+				<p>
+					Please fill data into the left form and see how the two views blocks
+					responds to the inserted data.
+				</p>
+			</div>
+		</div>
+		
+		<div class="row">
+			
+			<div class="span4">
+				<h3>Data Form</h3>
+				
+				<form action="#update" type="post" class="well">
+					
+					<label for="name">Name:</label>
+					<input type="text" name="name" id="name" placeholder="enter your name" />
+					
+					<label for="surname">Surname:</label>
+					<input type="text" name="surname" id="surname" placeholder="enter your surname" />
+					
+					<button type="submit" class="btn">Update Views!</button>
+					
+				</form>
+				
+			</div>
+			
+			<div class="span4">
+				<h3>View #1</h3>
+				
+				<div id="show1"></div>
+				
+			</div>
+			
+			<div class="span4">
+				<h3>View #2</h3>
+				
+				<div id="show2"></div>
+				
+			</div>
+			
+		</div>
+		
+	
+	</div>
+	
+</body>
+</html> 
