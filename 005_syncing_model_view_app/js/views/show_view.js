@@ -1,3 +1,25 @@
+/**
+ * Learning Backbone
+ * -> Syncing Models with Views
+ *
+ * @author: MPeg [marco(dot)pegoraro(at)gmail(dot)com]
+ *
+ * This view component display some data into somewere DOM element by compiling a template with some data.
+ * Data comes form a model.attributes object.
+ * 
+ * Both model and template are sets when instanciating the View Object.
+ * 
+ * The "model" propery is particular and it is referenced automagically as "this.model" property.
+ * The "template" property is unknown to the Backbone's View object so it is left into the "this.options" object.
+ * http://backbonejs.org/#View-constructor
+ * 
+ * The important thing in this code is the BINDING from model's "change" event to the view's "render" method.
+ * Each time model is changed the render() method is triggered causing the UI to be always up to date.
+ *
+ */
+
+
+
 define([
 	'backbone',
 	'underscore',

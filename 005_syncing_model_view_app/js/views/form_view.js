@@ -1,11 +1,21 @@
+/**
+ * Learning Backbone
+ * -> Syncing Models with Views
+ *
+ * @author: MPeg [marco(dot)pegoraro(at)gmail(dot)com]
+ *
+ * This view listen for the form to be submitted and updates the model
+ * with form data. 
+ *
+ */
+
+
 define([
 	'backbone',
-	'underscore',
 	'jquery'
 	
 ],function(
 	Backbone,
-	_,
 	$
 	
 ){
