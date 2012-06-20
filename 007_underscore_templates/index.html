@@ -1,0 +1,109 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>LearningBackbone - Underscore's Templates - App</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="Peg Test App">
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="../_libs/bootstrap/css/bootstrap.min.css">
+	
+	<!-- RequireJS -->
+	<script data-main="js/bootstrap" src="../_libs/require.js"></script>
+	
+	
+	<script type="text/template" id="js_template">
+	<strong>name:</strong> <%= data.name %> <%= data.surname %>! <% if ( data.age ) { %><br><small><strong>Age:</strong> <%= data.age %></small><% } %>
+	</script>
+	
+</head>
+<body>
+
+	<div id="app" class="container">
+		
+		<div class="page-header row">
+			<div class="span12">
+				<h2>LearningBackbone - Underscore's Templates - App</h2>
+				<p>
+					Purpose of this example is to study how to handle Underscore's template strings.<br>
+					We will try 4 methods to handle templates:
+				</p>
+				<ol>
+					<li>hard coded in a View object</li>
+					<li>hard coded in a <code>&lt;script&gt;</code> tag placed in the head of this document</li>
+					<li>loaded via ajax from a external template file (using RequireJS <em>text</em> plugin</li>
+					<li>fetched from a DOM element in this document</li>
+				</ol>
+			</div>
+		</div>
+		
+		<div class="row" style="border-bottom:1px solid #eee;margin-bottom:2em;padding-bottom:2em">
+			<div class="span12">
+				<h4>You need to click on button below to start this example. Why?</h4>
+			</div>
+			<div class="span12">
+				<p>So, by now you can see first 3 colums are empty and the 4th have a strange content inside.</p>
+				<p>
+					Well, 1st 2nd 4rd columns will be rendered with templates placed somewhere (script, view object, ajax loaded template). <br>
+					4th column contain it's template inside as simple HTML with some Underscore::template syntax.
+				</p>
+			</div>
+		</div>
+		
+		<div class="row" style="border-bottom:1px solid #eee;margin-bottom:2em;padding-bottom:2em;text-align:center">
+			<div class="span12">
+				<button id="start"class="btn btn-primary">Start Example!</button>
+			</div>
+		</div>
+		
+		<div class="row">
+			
+			<div class="span3">
+				<h3>1. Internal:</h3>
+				<div id="internal"></div>
+			</div>
+			
+			<div class="span3">
+				<h3>2. Javascript:</h3>
+				<div id="js"></div>
+			</div>
+			
+			<div class="span3">
+				<h3>3. RequestJS::text</h3>
+				<div id="text"></div>	
+			</div>
+			
+			<div class="span3">
+				<h3>4. DOM Fetched:</h3>
+				<div id="dom"><strong>name:</strong> <%= data.name %> <%= data.surname %>! <% if ( data.age ) { %><br><small><strong>Age:</strong> <%= data.age %></small><% } %></div>
+			</div>
+			
+		</div>
+		
+		
+		<!-- these are buttons that alter the model's data to see how changes reflects to the views -->
+		<div class="row" style="border-top:1px solid #eee;margin-top:2em;padding-top:2em;text-align:center">
+			<div class="span12">
+				<p>click on buttons below to alter the model's property values.</p>
+				<p>please look to view's rendered contents to change according to model's data</p>
+			</div>
+			<div class="span12">
+				<div class="btn-group" style="display:inline-block">
+					<button id="set_age"class="btn btn-primary disabled">Set Age</button>
+					<button id="change_name" class="btn btn-primary disabled">Change Name</button>
+					<button id="reset" class="btn btn-warning disabled">Reset</button>
+				</div>
+			</div>
+		</div>
+		
+	
+	</div>
+	
+</body>
+</html> 
