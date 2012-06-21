@@ -1,0 +1,57 @@
+/**
+ * Learning Backbone
+ * -> Hello World View
+ *
+ * @author: MPeg [marco(dot)pegoraro(at)gmail(dot)com]
+ */
+
+
+
+#twitterSearch {
+	background: #ddd;
+	border-radius: 10px;
+}
+
+#twitterSearch h3 {
+	text-align: center;
+	margin: 10px auto;
+}
+
+#twitterSearch form {
+	
+	margin: 0 10px;
+	
+}
+
+.tweets {
+	
+	margin: 0 10px 10px 10px;
+	padding: 10px;
+	background: #fff;
+	border-radius:5px;
+	
+	list-style-position:inside;
+	list-style:none;
+	
+	display:none;
+}
+
+.tweets li {
+	min-height: 4em;
+	display:block;
+	margin: 10px 0;
+	padding: 10px;
+	border-bottom:1px solid #ddd;
+	
+}
+
+.tweets li img {
+	float:left;
+	margin: 0 10px 5px 0;
+}
+
+.tweets li:last-child {
+	
+	border:none;
+	
+}

@@ -1,0 +1,102 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>LearningBackbone - TwitterSearch - App</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="Peg Test App">
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="../_libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+	<!-- RequireJS -->
+	<script data-main="js/bootstrap" src="../_libs/require.js"></script>
+	
+	
+</head>
+<body>
+
+	<div id="app" class="container">
+		
+		<div class="page-header row">
+			<div class="span12">
+				<h2>LearningBackbone - TwitterSearch - App</h2>
+				<p>
+					This App let you search Twitter for a custom query.
+				</p>
+			</div>
+		</div>
+				
+		<div class="row">
+			
+			<div class="span4">
+				
+				<h3>How to use this demo:</h3>
+				
+				<p>
+					Just enter some text in the form below then press "enter"!<br>
+					Then try to press "Esc" while entering text or double clicking the input field.
+				</p>
+				
+				<div id="twitterSearch" class="span4" style="margin-left:0;margin-top:20px;">
+				
+					<!-- Title Area | changes according to the search query -->
+					<h3>TwitterSearch App</h3>
+					
+					<!-- The Form | trigger search query -->
+					<form class="form-horizontal">
+						<div class="control-group">
+							<div class="controls" style="margin-left:0">
+								<div class="input-append">
+									<input type="text" placeholder="Search Twitter!"><button class="btn" type="button">Go!</button>
+								</div>
+							</div>
+						</div>
+					</form>
+					
+					<!-- Tweets Container | will be populated with tweets -->
+					<ul class="tweets"></ul>
+					
+				</div>
+				
+			</div>
+			
+			<div class="span8">
+				<h3>What does it do?</h3>
+				<p>
+					This is a really simple improvement of the <a href="../008_collections" class="label">Example 008</a> about Collections.<br>
+					Here we handle User Inputs to set what to search for.
+				</p>
+				
+				<h3>How I Did It?</h3>
+				<p>
+					I wrote a TweetsCollection object to store Tweets loaded from Twitter service and a main View object to handle all UI components.
+				</p>
+				<p>
+					There are 3 main UI components in this app.
+				</p>
+				<ol>
+					<li>Title Bar</li>
+					<li>The Form</li>
+					<li>Tweets List</li>
+				</ol>
+				
+				<p>
+					All components talks together by triggering events.<br>
+					
+				</p>
+				
+			</div>
+			
+		</div>
+	
+	</div>
+	
+</body>
+</html> 
