@@ -1,0 +1,226 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>LearningBackbone - TwitterSearch SYNC - App</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="Peg Test App">
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="../_libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+	<!-- RequireJS -->
+	<script data-main="js/bootstrap" src="../_libs/require.js"></script>
+	
+	
+</head>
+<body>
+
+	<div id="app" class="container">
+		
+		<div class="page-header row">
+			<div class="span12">
+				<h2>LearningBackbone - TwitterSearch SYNC - App</h2>
+				<p>
+					This App let you search Twitter for a custom query.
+				</p>
+			</div>
+		</div>
+				
+		<div class="row">
+			
+			<div class="span4">
+				
+				<h3>How to use this demo:</h3>
+				
+				<p>
+					Just enter some text in the form below then press "enter"!<br>
+					Then try to press "Esc" while entering text or double clicking the input field.
+				</p>
+				
+				<div id="twitterSearch" class="span4" style="margin-left:0;margin-top:20px;">
+				
+					<!-- Title Area | changes according to the search query -->
+					<h3>TwitterSearch App</h3>
+					
+					<!-- The Form | trigger search query -->
+					<form class="form-horizontal">
+						<div class="control-group">
+							<div class="controls" style="margin-left:0">
+								<div class="input-append">
+									<input type="text" placeholder="Search Twitter!"><button class="btn" type="button">Go!</button>
+								</div>
+							</div>
+						</div>
+					</form>
+					
+					<!-- Tweets Container | will be populated with tweets -->
+					<ul class="tweets"></ul>
+					
+				</div>
+				
+			</div>
+			
+			<div class="span8">
+				<h3>What does it do?</h3>
+				<p>
+					This is a really simple improvement of the <a href="../008_collections" class="label">Example 008</a> about Collections.<br>
+					Here we handle User Inputs to set what to search for.
+				</p>
+				
+				
+				
+				<h3>Search from Console!</h3>
+				<p>
+					TwitterSearch App lyes in a global namespace "App".<br>
+					Internally are stored all components al follow:
+				</p>
+				<ul>
+					<li>
+						App
+						<ul>
+							<li>tweets</li>
+							<li>
+								viewport
+								<ul>
+									<li>titleView</li>
+									<li>formView</li>
+									<li>tweetsView</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				
+				<p>
+					Try this code in your console!<br>
+					<code>App.tweets.search('@thepeg');</code>
+					<button class="btn btn-primary btn-mini" onclick="App.tweets.search('@thepeg')">Run!</button>
+				</p>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<h3>Views binds Models</h3>
+				
+				<p>
+					When you perform a search the App creates a list of models, one per tweet.<br>
+					Then there is a View that creates one sub-view per tweet binding it's model.
+				</p>
+				
+				<p>
+					This works because we want to render each result by <strong>compiling a template with model's data</strong>.
+				</p>
+				
+				<p>
+					But <em>TweetView</em> can <strong>listen to binded model's "change" event</strong> to re-render itself!<br>
+					Try this code in your console!
+				</p>
+				
+				<p>
+					<code>App.tweets.models[0].set('text','new text for the tweer');</code>
+					<button class="btn btn-primary btn-mini" onclick="App.tweets.models[0].set('text','new text for the tweer')">Run!</button>
+				</p>
+				
+				
+				
+				<h3>UI Events</h3>
+				
+				<ul>
+					<li>enter text then click "Go!" - search</li>
+					<li>enter text then return - search</li>
+					<li>double click on input field - reset search </li>
+					<li>esc on input field - reset search</li>
+				</ul>
+				
+				
+				
+				<h3>Stress the Observe Pattern</h3>
+				<p>
+					Objects never calls direct methods in this app! Even when methods are internal!<br>
+					All interactions belongs to events!
+				</p>
+				<p>
+					<strong>What happen when clicking "go"?</strong>
+				</p>
+				<ol>
+					<li>
+						FormView intercepts the UI action and <u>trigger a "performSearch"</u> event on the TweetsCollection object passing the search text as option.<br>
+						<code>this.collection.trigger( 'performSearch', this.$input.val() );</code>
+						<br><br>
+					</li>
+					<li>
+						TweetsCollection <u>listen for a "performSearch"</u>, <u>trigger a "searchStart"</u> event on itself then fetch results
+						from the remote web service.<br>
+						<code>this.trigger( 'searchStart', q );</code>
+						<ul>
+							<li>TitleView <u>listen for "searchStart"</u> and updates the title according with the search string</li>
+							<li>TweetsView <u>listen for "searchStart"</u> and display a waiting message</li>
+							<li>FormView <u>listen for "searchStart"</u> and clear the input text</li>
+						</ul>
+						<br>
+					</li>
+					<li>
+						Collection's fetch() method trigger a "reset" event on the collection iteself. At this time new tweets area already stored into the collection's model property.
+						<ul>
+							<li>
+								TweetsView listen for collection's "reset" event and starts to analyze collection's models<br>
+								<b>if</b> search is empty then <u>trigger an "emptySearch"</u> event.<br>
+								<b>else</b> <u>trigger an "addItem"</u> event on each collection's model item
+							</li>
+							<li>
+								TweetView <u>listen for "emptySearch"</u> event (triggered by itself) to display a warning message
+							</li>
+							<li>
+								TweetView <u>listen for "addItem"</u> event (triggered by itself) to create new sub-view and render a single tweet.
+							</li>
+						</ul>
+					</li>
+				</ol>
+				
+				<p>
+					It may seems a little verbose logic for a small application like TwitterSearch but coding (and thinking) this way <strong>ensures to maintain 
+					responsibilities of different objects separate</strong> form every else objects!
+				</p>
+				
+				
+				
+				<h3>Tutorials and Documentations</h3>
+				<ul>
+					<li>
+						<a href="http://movableapp.com/2012/06/backbonejs-by-examples/#ex009" target="_blank">LearningBackbone</a>
+						- mini tutorial in LearningBackbone Project's page
+					</li>
+					<li>
+						<a href="http://www.consulenza-web.com/2012/06/tutorial-twittersearch-backbone-app/" target="_blank">[ITA] Architecture tutorial</a>
+						- explain how I built this app and expose some code pattern I used
+					</li>
+				</ul>
+				
+			</div>
+			
+		</div>
+		
+		
+		<footer style="margin-top: 45px;padding: 35px 0 36px;border-top: 1px solid #E5E5E5;">
+			<p class="pull-right"><a href="http://movableapp.com/2012/06/backbonejs-by-examples/" target="_blank">MovableAPP.com</a></p>
+			<p>Created by <a href="https://twitter.com/thepeg" target="_blank">@thepeg</a></p>
+			
+		</footer>
+	
+	</div>
+	
+</body>
+</html> 
