@@ -31,6 +31,7 @@ define([
 		
 		initialize: function() {
 			
+			// Observe Pattern - listen for Collection's events
 			this.collection.on( 'search', this.render, this );
 			this.collection.on( 'cancel', this.render, this );
 			

@@ -25,6 +25,7 @@ define([
 		
 		initialize: function() {
 			
+			// Observe Pattern - listen for Collection's events
 			this.collection.on( 'cancel', this.clearInput, this );
 			
 		},
@@ -55,6 +56,7 @@ define([
 			
 			e.preventDefault();
 			
+			// Observer Pattern - trigget events to dependency objects!
 			// Trigger a "search" event with arguments to the handled collection.
 			// we don't know if the collection will handle this event so this is the safest way to
 			// dialog between different objects.
@@ -75,6 +77,7 @@ define([
 			
 			e.preventDefault();
 			
+			// Observer Pattern - trigget events to dependency objects!
 			if ( e.keyCode == 27 ) this.collection.trigger( 'cancel' );
 			
 		}

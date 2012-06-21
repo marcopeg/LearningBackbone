@@ -31,6 +31,7 @@ define([
 		
 		initialize: function() {
 			
+			// Observe Pattern - listen for Collection's events
 			// Binds collection's events to internal rendering functions.
 			this.collection.on( 'add', 			this.addItem, 		this );
 			this.collection.on( 'reset', 		this.initSearch, 	this );

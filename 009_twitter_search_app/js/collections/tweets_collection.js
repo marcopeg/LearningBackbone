@@ -38,6 +38,8 @@ define([
 		
 		initialize: function() {
 			
+			// Observer Pattern - listen for events triggered on object itself
+			// these events are triggered from outside this object! (from FormViews)
 			this.on( 'search', this.search );
 			this.on( 'cancel', this.cancel );
 			
