@@ -50,11 +50,15 @@ define([
 				collection: this.collection
 			});
 			
-			this.render();
-			
 		},
 		
 		render: function() {
+			
+			this.titleView.render();
+			
+			this.formView.render();
+			
+			this.tweetsView.render();
 			
 			return this;
 			

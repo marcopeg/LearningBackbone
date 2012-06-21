@@ -40,13 +40,13 @@ define([
 			// bind model's canges to the render() method to mantain interface up to date.
 			this.model.on( 'change', this.render, this );
 			
-			this.render();
-			
 		},
 		
 		render: function() {
 			
 			this.$el.html(this.template( this.model.toJSON() ));
+			
+			return this;
 			
 		}
 		

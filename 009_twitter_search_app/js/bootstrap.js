@@ -74,6 +74,6 @@ define([
 	App.viewport = new Viewport({
 		el: 		'#twitterSearch',
 		collection: App.tweets
-	});
+	}).render();
 	
 });

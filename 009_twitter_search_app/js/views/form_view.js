@@ -27,8 +27,6 @@ define([
 			
 			this.collection.on( 'cancel', this.clearInput, this );
 			
-			this.render();
-			
 		},
 		
 		events: {

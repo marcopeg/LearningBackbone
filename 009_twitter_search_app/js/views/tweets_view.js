@@ -32,10 +32,10 @@ define([
 		initialize: function() {
 			
 			// Binds collection's events to internal rendering functions.
-			this.collection.on( 'add', this.addItem, this );
-			this.collection.on( 'reset', this.render, this );
-			this.collection.on( 'emptySearch', this.emptySearch, this );
-			this.collection.on( 'cancel', this.cancel, this );
+			this.collection.on( 'add', 			this.addItem, 		this );
+			this.collection.on( 'reset', 		this.initSearch, 	this );
+			this.collection.on( 'emptySearch', 	this.emptySearch, 	this );
+			this.collection.on( 'cancel', 		this.cancel, 		this );
 			
 		},
 		
@@ -44,7 +44,7 @@ define([
 		 * the "render()" method simply sets up a welcome waiting message for the list.
 		 * the real scope for this view is to display items but item comes binded with the collection!
 		 */
-		render: function() {
+		initSearch: function() {
 			
 			// set a waiting message.
 			this.$el.fadeIn();
@@ -96,7 +96,7 @@ define([
 			// create an instance of the sub-view to render the single tweet item.
 			var tweetItem = new TweetView({
 				model: 		tweetModel
-			});
+			}).render();
 			
 			// append sub-view DOM node to the view's node.
 			this.$el.append( tweetItem.el );
