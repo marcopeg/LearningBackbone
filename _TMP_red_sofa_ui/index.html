@@ -1,0 +1,96 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>LearningBackbone - Redsofa - LiveMockup UI App</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="LearningBackbone - Redsofa - LiveMockup UI App">
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="../_libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	
+	<!-- Less App -->
+	<link rel="stylesheet/less" type="text/css" href="css/red_sofa.less?a=2">
+	<script src="../_libs/less.js" type="text/javascript"></script>
+	
+	<!-- RequireJS -->
+	<script data-main="js/bootstrap" src="../_libs/require/require.js"></script>
+	
+	
+</head>
+<body>
+
+	<div id="app" class="container">
+		
+		<div class="page-header row">
+			<div class="span12">
+				<h2>LearningBackbone - Redsofa - LiveMockup UI App</h2>
+				<p>
+					This is the UI for RedSofa LiveMockup builder app.
+				</p>
+			</div>
+		</div>
+		
+		
+		
+		<div id="redsofa" class="row">
+			
+			<!-- Stage Area -->
+			<div class="stage span8">
+				
+				<div class="cards-list"></div>
+				
+				&nbsp;
+				
+			</div>
+			
+			<!-- Sidebar Area -->
+			<div class="span4">
+				<div class="sidebar">
+					<div class="drop-image">drag images here</div>
+					
+					<div class="property-panel">
+						
+						<a href="#close" class="close">&nbsp;</a>
+						
+						<form>
+							<label>Destinazione</label>
+							<select class="target"></select>
+							
+							
+							<label>Top:</label>
+							<input type="text" class="top">
+							<label>Left</label>
+							<input type="text" class="left">
+							<label>Larghezza</label>
+							<input type="text" class="width">
+							<label>Altezza</label>
+							<input type="text" class="height">
+						</form>
+					</div>
+					
+					
+					<a id="get-code" href="#get-code" class="btn btn-large btn-primary">Get Code Now!</a>
+					
+				</div>
+			</div>
+		</div>
+		
+				
+		
+		<footer style="margin-top: 45px;padding: 35px 0 36px;border-top: 1px solid #E5E5E5;">
+			<p class="pull-right"><a href="http://movableapp.com/2012/06/backbonejs-by-examples/" target="_blank">MovableAPP.com</a></p>
+			<p>Created by <a href="https://twitter.com/thepeg" target="_blank">@thepeg</a></p>
+			
+		</footer>
+	
+	</div>
+	
+</body>
+</html> 

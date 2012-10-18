@@ -31,15 +31,25 @@ require.config({
 	paths: {
 		
 		// Libraries
-		text:		'../_libs/text',
-		jquery: 	'../_libs/jquery',
-		underscore:	'../_libs/underscore',
-		backbone:	'../_libs/backbone',
+		text:		'../_libs/require/text',
+		jquery: 	'../_libs/jquery/jquery.172',
+		underscore:	'../_libs/underscore/underscore.133',
+		backbone:	'../_libs/backbone/backbone.092',
 		
 		// Application Places
 		view:		'js/views',
 		plugin:		'js/plugins'
 		
+	},
+	
+	shim: {
+		underscore: {
+			exports: '_'
+		},
+		backbone: {
+			deps: ["underscore", "jquery"],
+			exports: "Backbone"
+		}
 	}
 	
 });
@@ -63,6 +73,7 @@ require.config({
  * NOTE: "templates/hello_worls.html" path refers to the config::baseUrl.
  *
  */
+
 define(['view/hello_world_view','text!templates/hello_world.html'],function(HelloWorldView,Template){
 	
 	HelloWorldView.render( Template );

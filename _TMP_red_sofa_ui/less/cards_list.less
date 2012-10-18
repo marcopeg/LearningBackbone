@@ -1,0 +1,76 @@
+
+
+.cards-list {
+	
+	.block( 100%, auto );
+	
+	
+	
+	
+	.card {
+		
+		.rel;
+		.border-radius( 5px );
+		
+		background: @ColorLightGrey;
+		border:1px solid @ColorDarkGrey;
+		margin:0 0 1em 0;
+		padding:1em;
+		
+		
+		.remove-handler {
+			
+			.abs( 0, -24px );
+			.block( 19px, 19px );
+			
+			cursor:pointer;
+			
+			background-image: url(../css/images/ui-icons_888888_256x240.png);
+			background-position: -31px -190px;
+			
+		}
+		
+		.remove-handler:hover {
+			background-image: url(../css/images/ui-icons_cd0a0a_256x240.png);
+		}
+		
+		.sort-handler {
+			
+			.abs( 24px, -26px );
+			.block( 24px, 16px );
+			.border-radius-left( 5px );
+			
+			border:1px solid @ColorDarkGrey;
+			border-right:1px solid @ColorLightGrey;
+			background: @ColorLightGrey;
+			cursor: move;
+			
+			background-image: url(../css/images/ui-icons_454545_256x240.png);
+			background-position: -12px -224px;
+			
+		}
+		
+		.card_area {
+			
+			position:absolute;
+			top:0;
+			left:0;
+			
+			background: rgba( 255, 255, 50, 0.6 );
+			border:1px solid #b5b54e;
+			
+		}
+		
+		.card_area.active {
+			background: rgba( 255, 255, 50, 0.8 );
+			background: red;
+		}
+		
+		_img {
+			width:50%;
+			height:auto;
+		}
+		
+	}
+	
+}

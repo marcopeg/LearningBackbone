@@ -1,0 +1,88 @@
+// MovableAPP - Mixins
+// -------------------
+
+.rel { position:relative }
+
+.abs( @top:0, @left:0 ) {
+	position:			absolute;
+	top:				@top;
+	left:				@left;
+}
+
+.absRight( @top:0, @left:0 ) {
+	position:			absolute;
+	top:				@top;
+	right:				@left;
+}
+
+.absBottom( @top:0, @left:0 ) {
+	position:			absolute;
+	bottom:				@top;
+	left:				@left;
+}
+
+.absBottomRight( @top:0, @left:0 ) {
+	position:			absolute;
+	bottom:				@top;
+	right:				@left;
+}
+
+.block( @width:auto, @height:auto ) {
+	display:			block;
+	.size( @height, @width );
+}
+
+.mask( @width:auto, @height:auto ) {
+	.block( @width, @height );
+	overflow:hidden;
+}
+
+.inline-block {
+	display:			-moz-inline-stack;
+	display:			inline-block;
+	zoom:				1;
+	*display:			inline;
+}
+
+.inlineList {
+	
+	margin:				0;
+	padding:			0;
+	list-style:			none;
+	list-style-position:inside;
+	
+	li {
+		display:		inline;
+		.inline-block;
+	}
+
+}
+
+.noBorder { border:none }
+
+.ta( @align ) { text-align:@align; }
+.tr { .ta(right); }
+.tl { .ta(left); }
+.tc { .ta(center); }
+
+
+.border-radius-left( @radius ) {
+	
+	-webkit-border-top-left-radius:			@radius;
+	-webkit-border-bottom-left-radius:		@radius;
+	-moz-border-radius-topleft:				@radius;
+	-moz-border-radius-bottomleft:			@radius;
+	border-top-left-radius:					@radius;
+	border-bottom-left-radius:				@radius;
+	
+}
+.border-radius-right( @radius ) {
+	
+	-webkit-border-top-right-radius:		@radius;
+	-webkit-border-bottom-right-radius:		@radius;
+	-moz-border-radius-topright:			@radius;
+	-moz-border-radius-bottomright:			@radius;
+	border-top-right-radius:				@radius;
+	border-bottom-right-radius:				@radius;
+	
+}

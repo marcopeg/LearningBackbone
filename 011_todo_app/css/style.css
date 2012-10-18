@@ -1,0 +1,201 @@
+/**
+ * Learning Backbone
+ * -> Hello World View
+ *
+ * @author: MPeg [marco(dot)pegoraro(at)gmail(dot)com]
+ */
+
+
+.todo-app {
+	background: #ddd;
+	border:1px solid #ccc;
+	border-radius:8px;
+	text-shadow: 0 1px 0 #fff;
+}
+
+.todo-app .left {
+	float:left;
+	width:40%;
+}
+
+.todo-app .left .col {
+	border-right: 1px solid #ccc;
+}
+
+.todo-app .right {
+	float:right;
+	width:60%;
+}
+
+.todo-app .right .col {
+	border-left: 1px solid #eee;
+}
+
+.todo-app .right h3 small {
+	display:block;
+	width:80px;
+	float: left;
+	text-align: right;
+	margin-right:10px;
+	color:#fff;
+	text-shadow: 0 1px 0 #333;
+	font-weight: bold;
+}
+
+.todo-app .col {
+	position:relative;
+	height:300px;
+	overflow:hidden;
+}
+
+.todo-app .box {
+	padding:10px;
+}
+
+
+
+
+
+/**
+ * The Title
+ */
+
+.todo-app .title, .todo-app .title h3 {
+	border:none;
+}
+.todo-app .title h3 {
+	background: #aaa;
+	margin:10px 10px;
+	line-height: 14px;
+	height:14px;
+	overflow: hidden;
+}
+.todo-app .left.title h3 {
+	border-right:none;
+	margin-right:0;
+	border-top-left-radius: 8px;
+}
+.todo-app .right.title h3 {
+	border-left:none;
+	margin-left:0;
+	border-bottom-right-radius: 8px;
+}
+
+
+
+
+
+
+/**
+ * The List
+ */
+
+.todo-app .list {
+	border-bottom: 1px solid #ccc;
+	height: 240px;
+	overflow:hidden;
+	overflow-y:visible;
+}
+
+.todo-app .list ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+.todo-app .list ul li {
+	display:block;
+	padding:5px 5px;
+}
+
+.todo-app .list ul li:hover {
+	background: #eee;
+	border-radius:5px;
+}
+
+.todo-app .list ul li a.title {
+	display:block;
+	float:left;
+	max-width: 80%;
+	min-width: 80%;
+	margin-left:5px;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color:#000;
+}
+.todo-app .list ul li a.title:hover {
+	text-decoration:none;
+}
+
+.todo-app .list ul li a.btn {
+	display:none;
+	float:right;
+}
+
+.todo-app .list ul li:hover a.btn {
+	display:block;
+}
+
+.todo-app .list-actions {
+	text-align: right;
+	border-top: 1px solid #eee;
+}
+
+.todo-app .list ul li.active {
+	background: #666;
+	border-radius: 5px;	
+}
+.todo-app .list ul li.changed {
+	background: #666 url(bullet_blue.png) right center no-repeat;
+}
+
+.todo-app .list ul li.active a.title {
+	color:#fff;
+	text-shadow: 0 1px 0 #444;
+}
+
+
+
+
+
+
+
+
+/**
+ * The Form
+ */
+
+.todo-app form {
+	display:none;
+}
+
+.todo-app .form-fields {
+	border-bottom: 1px solid #ccc;
+	height:240px;
+}
+
+.todo-app .form-fields label {
+	width:80px;
+}
+
+.todo-app .form-fields .controls {
+	margin-left:90px;
+	margin-right:20px;
+}
+
+.todo-app .form-fields .controls input, .todo-app .form-fields .controls textarea {
+	width:100%;
+}
+
+.todo-app .form-fields textarea {
+	height:180px;
+}
+
+.todo-app .form-actions {
+	margin:0;
+	padding-right:22px;
+	background: none;
+	text-align:right;
+	border-top: 1px solid #eee;
+}
