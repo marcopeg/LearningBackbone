@@ -23,10 +23,10 @@ require.config({
 	paths: {
 		
 		// Libraries
-		text:		'../_libs/require/text',
-		jquery: 	'../_libs/jquery/jquery.172',
-		underscore:	'../_libs/underscore/underscore.133',
-		backbone:	'../_libs/backbone/backbone.092',
+		text:		'../libs/require/text',
+		jquery: 	'../libs/jquery/jquery.172',
+		underscore:	'../libs/underscore/underscore.133',
+		backbone:	'../libs/backbone/backbone.092',
 		
 		// Application Places
 		view:		'js/views'

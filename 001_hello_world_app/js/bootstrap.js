@@ -14,7 +14,7 @@
  * In this examples package all examples shares some js libraries.
  *
  * In example's modules we need to use these libraries and want to refer them via simple name.
- * /_libs/jquery.js -> "jquery"
+ * /libs/jquery.js -> "jquery"
  *
  * the "paths" key allow to teach RequireJs to where some named libraries lies.
  * when we will ask for a define block to depend on "jquery" RequireJs will use
@@ -30,10 +30,10 @@ require.config({
 	paths: {
 		
 		// Libraries
-		text:		'../_libs/require/text',
-		jquery: 	'../_libs/jquery/jquery.172',
-		underscore:	'../_libs/underscore/underscore.133',
-		backbone:	'../_libs/backbone/backbone.092'
+		text:		'../libs/require/text',
+		jquery: 	'../libs/jquery/jquery.172',
+		underscore:	'../libs/underscore/underscore.133',
+		backbone:	'../libs/backbone/backbone.092'
 		
 	},
 	

@@ -15,7 +15,7 @@ if ( !window.__backboneUiAmdJQuery ) 		window.__backboneUiAmdJQuery 		= 'jquery'
 require.config({
 	
 	// Change this to configure your UI folder location
-	baseUrl: '../_libs/ui/',
+	baseUrl: '../libs/ui/',
 	
 	paths: {
 		
